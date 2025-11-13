@@ -15,4 +15,5 @@ export default defineConfig({
         tailwindcss(),
         viteSvgLoader(),
     ],
+    base: '/',
 })
