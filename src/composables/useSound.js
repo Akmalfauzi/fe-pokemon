@@ -9,7 +9,7 @@ export function useSound() {
     // Initialize audio
     const initSound = () => {
         if (!audio.value) {
-            audio.value = new Audio('/src/assets/sfx/select.wav')
+            audio.value = new Audio('/sfx/select.wav')
             audio.value.volume = 0.3 // Set volume to 30%
         }
     }
