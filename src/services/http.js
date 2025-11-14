@@ -6,7 +6,7 @@ const baseURL = import.meta.env.VITE_API_BASE_URL?.replace(/\/+$/, '') || 'http:
 // Create axios instance
 export const http = axios.create({
     baseURL: `${baseURL}`,
-    timeout: 15000,
+    // timeout: 15000,
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
