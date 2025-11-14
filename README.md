@@ -101,10 +101,10 @@ src/
 
 3. **Set up environment variables**
    ```bash
-   cp .env.example .env.development
+   cp .env.example .env.local
    ```
 
-   Then modify the `.env.development` file with your configuration.
+   Then modify the `.env.local` file with your configuration.
 
 4. **Start development server**
    ```bash
@@ -193,6 +193,14 @@ npm run build
 netlify deploy --prod --dir=dist
 ```
 
+**Important for Vue Router**: Make sure to include the `_redirects` file in your deployment to handle client-side routing. The file should be placed in your `public` directory with the following content:
+
+```
+/*    /index.html   200
+```
+
+**Important for Sound Effects**: Place all audio files in the `public/sfx/` directory to ensure they are accessible in production builds.
+
 #### 3. GitHub Pages
 
 ```bash
@@ -216,16 +224,22 @@ The `dist/` folder contains all the static files and can be deployed to any stat
 
 ### Environment Variables
 
-Create environment files in the project root:
+Copy the example environment file and modify as needed:
 
-**Local (`.env.local`)**
+```bash
+cp .env.example .env.local
+```
+
+**Development (`.env.local`)**
 ```env
 VITE_API_BASE_URL=http://localhost:3000/api
+VITE_NODE_ENV=local
 ```
 
 **Production (`.env.production`)**
 ```env
 VITE_API_BASE_URL=https://your-api-domain.com/api
+VITE_NODE_ENV=production
 ```
 
 ## Configuration
@@ -248,31 +262,14 @@ Uses Tailwind CSS v4 with modern utility-first approach. Configuration is handle
 - Safari (latest)
 - Edge (latest)
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
 ## Links
 
-- **Live Demo**: [Add your deployed application link here]
-- **Pokemon API**: [PokeAPI](https://pokeapi.co/)
+- **Live Demo**: [Link 1](https://pokedex.fauzy.my.id/) [Link 2](https://akmalfauzi-pokedex.netlify.app/)
+- **Pokemon API**: [PokeAPI](https://pokeapi.co/docs/v2)
 - **Vue 3 Documentation**: [vuejs.org](https://vuejs.org/)
-- **Vite Documentation**: [vitejs.dev](https://vitejs.dev/)
+- **Vite Documentation**: [vite.dev](https://vite.dev/)
 - **Tailwind CSS**: [tailwindcss.com](https://tailwindcss.com/)
 
-## Support
-
-If you have any questions or issues, please:
-- Open an issue on GitHub
-- Contact the development team
 
 ---
 
